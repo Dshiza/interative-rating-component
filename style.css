@@ -1,0 +1,210 @@
+:root {
+  /*COLORS*/
+  --clr-primary-500: hsl(25, 97%, 53%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(217, 12%, 63%);
+  --clr-neutral-600: hsl(216, 12%, 54%);
+  --clr-neutral-800: hsl(213, 19%, 18%);
+  --clr-neutral-900: hsl(216deg 44.2% 3.58%);
+
+  --clr-grad-900: linear-gradient(
+    180deg,
+    hsl(213, 19%, 18%) 0%,
+    hsl(216, 12%, 8%) 100%
+  );
+
+  /*FONTS*/
+  --ff-sans: "Overpass", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-100: 1rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: var(--ff-sans);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--clr-neutral-900);
+  display: grid;
+  place-items: center;
+}
+main {
+  max-width: 360px;
+  background: var(--clr-grad-900);
+  border-radius: 10px;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+/*BUTTON*/
+div ~ input[type="submit"],
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 1.5rem;
+}
+input {
+  appearance: none;
+}
+label {
+  display: inline-block;
+  border-radius: 100vh;
+
+  margin-block: auto;
+  padding: 10px;
+  width: 40px;
+  height: 42px;
+  text-align: center;
+}
+label:hover,
+input[type="radio"]:checked + label {
+  cursor: pointer;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-500);
+}
+
+#1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+#2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+#3 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+#4 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+#5 {
+  grid-area: 1 / 5 / 2 / 6;
+}
+#sub {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  margin-top: 20px;
+  justify-self: normal;
+}
+#submit {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-100);
+  padding-block: 0.5rem;
+  text-transform: capitalize;
+  transition: linear 0.25s;
+}
+#submit:hover {
+  cursor: pointer;
+  color: var(--clr-primary-500);
+  background-color: var(--clr-neutral-100);
+}
+
+/*  confirmation*/
+
+/*UTILITY CLASSES*/
+.padding-100 {
+  padding: 1rem;
+}
+
+.rating-wrapper {
+  display: inline-block;
+  border-radius: 100%;
+  border: 1px solid red;
+  padding: 10px;
+  margin-right: auto;
+}
+
+.mi-auto {
+  margin-inline: auto;
+}
+
+.clr-100 {
+  color: hsl(0, 0%, 100%);
+}
+
+.clr-200 {
+  color: hsl(216, 12%, 54%);
+}
+
+.bg-200 {
+  background: hsl(213, 19%, 18%);
+}

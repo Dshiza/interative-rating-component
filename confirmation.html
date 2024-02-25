@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submitted</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="padding-100" style="text-align: center;">
+        <div>
+            <img style="margin-inline: auto;" src="images/illustration-thank-you.svg"
+                alt="credit card machine ilustrating rating accepted">
+            <p
+                style="margin-top: 1rem; font-size: 1.25rem; color: hsl(25, 97%, 53%); background-color: hsl(216, 12%, 8%,0.5);margin-inline: 3rem;border-radius: 1rem;">
+                You selected <span class="span"></span> out of 5</p>
+        </div>
+        <h1 class="clr-100">Thank you!</h1>
+        <p class="clr-200">We appreciate you taking the time to give a rating. If you ever need more support,
+            don’t hesitate to get in touch!</p>
+    </main>
+    <script>
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('number')
+        console.log(product);
+        const spanElement = document.querySelector('.span'); // Select the span element
+        spanElement.textContent = product; // Update its content
+    </script>
+
+
+
+</body>
+
+</html>

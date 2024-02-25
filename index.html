@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Interactive rating component</title>
+  <style>
+    .padding-100 {
+      padding: 1rem;
+    }
+
+    .rating-wrapper {
+      display: inline-block;
+      border-radius: 100%;
+      border: 1px solid red;
+      padding: 10px;
+      margin-right: auto;
+    }
+
+    .mi-auto {
+      margin-inline: auto;
+    }
+
+    .clr-100 {
+      color: hsl(0, 0%, 100%);
+    }
+
+    .clr-200 {
+      color: hsl(216, 12%, 54%);
+    }
+
+    .bg-200 {
+      background: hsl(213, 19%, 18%);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="padding-100">
+    <div class="rating-wrapper">
+      <img src="./images/icon-star.svg" alt="star to represent the classification of the product">
+    </div>
+    <h1 class="clr-100">How did we do?</h1>
+    <p class="clr-200">Please let us know how we did with your support request. All feedback is appreciated
+      to help us improve our offering!</p>
+    <form id="form" action="confirmation.html" method="get" onsubmit="return validateForm()">
+      <div class="clr-200">
+        <input type="radio" name="number" value="1" id="1" />
+        <label for="1" class="bg-200">1</label>
+      </div>
+      <div class="clr-200">
+        <input type="radio" name="number" value="2" id="2" />
+        <label for="2" class="bg-200">2</label>
+      </div>
+      <div class="clr-200">
+        <input type="radio" name="number" value="3" id="3" />
+        <label for="3" class="bg-200">3</label>
+      </div>
+      <div class="clr-200">
+        <input type="radio" name="number" value="4" id="4" />
+        <label for="4" class="bg-200">4</label>
+      </div>
+      <div class="clr-200">
+        <input type="radio" name="number" value="5" id="5" />
+        <label for="5" class="bg-200">5</label>
+      </div>
+      <div id="sub">
+        <input type="submit" name="submit" value="submit" id="submit" />
+      </div>
+    </form>
+  </main>
+
+  <script>
+    /*do validation form*/
+    const subButton = document.getElementById("submit");
+    console.log(subButton)
+    document.getElementById("form").addEventListener("submit", function (event) {
+      // Check if any radio input is selected
+      if (!document.querySelector('input[name="number"]:checked')) {
+        // Prevent form submission if no radio input is selected
+        event.preventDefault();
+        alert("Please select an option.");
+      }
+    });
+  </script>
+</body>
+
+</html>
